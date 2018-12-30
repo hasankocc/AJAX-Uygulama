@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>        
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div style="margin-top:20px;" class="container" style="font-family:Arial">
+    <h2>Students</h2><br />
+
+        @Ajax.ActionLink("All", "All", new AjaxOptions
+                                       {
+                                           HttpMethod = "GET",
+                                           UpdateTargetId = "divStudents",
+                                           InsertionMode = InsertionMode.Replace
+                                        })
+        <span style="color:blue">|</span>
+        @Ajax.ActionLink("Top3", "Top3", new AjaxOptions
+                               {
+                                   HttpMethod = "GET",
+                                   UpdateTargetId = "divStudents",
+                                   InsertionMode = InsertionMode.Replace
+                                })
+        <span style="color:blue">|</span>
+        @Ajax.ActionLink("Bottom3", "Bottom3", new AjaxOptions
+                                   {
+                                       HttpMethod = "GET",
+                                       UpdateTargetId = "divStudents",
+                                       InsertionMode = InsertionMode.Replace
+                                    })
+         
+    </div>
+    <div id="divStudents" class="container">
+    </div>
+</body>
+</html>

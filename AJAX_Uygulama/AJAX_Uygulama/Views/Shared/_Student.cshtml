@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AJAX_Uygulama.Models.Student>
+
+
+<table background-color:silver" class="table table-responsive">
+    <tr >
+        <th >
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade)
+        </td>
+
+    </tr>
+}
+
+</table>
